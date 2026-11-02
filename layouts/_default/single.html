@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="post">
+  <h1>{{ .Title }}</h1>
+  {{ if in (slice "posts" "patches") .Section }}<div class="meta">{{ with .Params.platform }}{{ . }} / {{ end }}{{ .Date.Format "2006.01.02" }} / {{ .ReadingTime }} MIN</div>{{ end }}
+  {{ if and .Params.toc (gt .WordCount 600) }}<details class="toc" open><summary>Contents</summary>{{ .TableOfContents }}</details>{{ end }}
+  {{ .Content }}
+  {{ with .Params.tags }}<p>{{ range . }}<span class="tag">#{{ . }}</span>{{ end }}</p>{{ end }}
+</article>
+{{ end }}

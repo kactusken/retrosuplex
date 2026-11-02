@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="list-head"><h1>{{ .Title }}</h1>{{ with .Content }}<div>{{ . }}</div>{{ end }}</div>
+<table class="ptable" id="ptable">
+  <thead><tr>
+    <th aria-sort="ascending"><button type="button">GAME / ゲーム</button></th>
+    <th><button type="button">PLATFORM</button></th>
+    <th><button type="button">VERSION</button></th>
+    <th><button type="button">UPDATED</button></th>
+    <th><button type="button">GUIDE</button></th>
+  </tr></thead>
+  <tbody>
+  {{ range .Pages.ByTitle }}
+  <tr>
+    <td><a href="{{ .Params.release_url | default .Params.repo }}">{{ .Params.game | default .Title }}</a></td>
+    <td>{{ .Params.platform }}</td>
+    <td>{{ with .Params.version }}v{{ . }}{{ else }}-{{ end }}</td>
+    <td>{{ with .Params.updated }}{{ time.Format "2006-01-02" . }}{{ end }}</td>
+    <td class="{{ if .Params.guide }}yes{{ end }}">{{ if .Params.guide }}{{ with .Params.guide_url }}<a href="{{ . }}">Yes</a>{{ else }}Yes{{ end }}{{ else }}No{{ end }}</td>
+  </tr>
+  {{ else }}
+  <tr><td colspan="5">No patches released yet.</td></tr>
+  {{ end }}
+  </tbody>
+</table>
+<script>
+(function(){var t=document.getElementById('ptable');if(!t)return;var b=t.tBodies[0],h=t.tHead.rows[0].cells;
+Array.prototype.forEach.call(h,function(th,i){th.firstChild.addEventListener('click',function(){
+var asc=th.getAttribute('aria-sort')!=='ascending';Array.prototype.forEach.call(h,function(x){x.removeAttribute('aria-sort')});
+th.setAttribute('aria-sort',asc?'ascending':'descending');
+var rows=Array.prototype.slice.call(b.rows);
+rows.sort(function(a,c){var x=a.cells[i].textContent.trim(),y=c.cells[i].textContent.trim();
+var r=x.localeCompare(y,undefined,{numeric:true,sensitivity:'base'});return asc?r:-r});
+rows.forEach(function(r){b.appendChild(r)})})})})();
+</script>
+{{ end }}

@@ -1,0 +1,6 @@
+{{- $jp := dict "posts" "記事" "patches" "パッチ" "about" "概要" -}}
+<div class="wrap"><header>
+  <a class="logo" href="/"><b>闘魂</b><span>RETRO SUPLEX</span></a>
+  <div class="hmeta">PROJECT: RETRO SUPLEX<br>設計図 / FAN TRANSLATION WORKS</div>
+  <nav>{{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name | upper }}<i>{{ index $jp (lower .Name) }}</i></a>{{ end }}<a href="/index.xml">RSS<i>配信</i></a></nav>
+</header></div>

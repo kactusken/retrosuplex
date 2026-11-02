@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="cover">
+  <div class="art" aria-hidden="true"><div class="kana">プロレス</div></div>
+  <div class="t">
+    <div class="iss">試合開始 / {{ now.Format "JAN 2006" | upper }}</div>
+    <h1>Translating the ring.</h1>
+    <p>{{ site.Params.description }}</p>
+  </div>
+  {{ with resources.Get "img/header-ring.png" }}{{ $r := .Resize "700x webp q88" }}<img class="ring" src="{{ $r.RelPermalink }}" width="{{ $r.Width }}" height="{{ $r.Height }}" alt="Diagram of a wrestling ring with labels for the corner posts, canvas, ropes, turnbuckles and apron">{{ end }}
+</section>
+<h2 class="sec">図面一覧 / TECHNICAL INDEX</h2>
+<section class="lines">{{ partial "index-head.html" . }}
+{{ range $i, $p := first 8 (where site.RegularPages "Section" "in" (slice "posts" "patches")) }}{{ partial "line.html" (dict "p" $p "n" (add $i 1)) }}{{ end }}
+</section>
+<p><a href="/posts/">All posts →</a></p>
+{{ end }}

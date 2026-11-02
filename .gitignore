@@ -1,0 +1,25 @@
+public/
+resources/_gen/
+.hugo_build.lock
+# Never commit ROMs or ISOs or original game data
+*.sfc
+*.smc
+*.nes
+*.gba
+*.gb
+*.gbc
+*.md1
+*.bin
+*.iso
+*.cue
+*.z64
+*.n64
+*.v64
+*.sms
+*.gen
+*.pce
+*.7z
+*.zip
+
+# Design inspiration material (screenshots, references) - never commit or publish
+inspiration/

@@ -1,0 +1,13 @@
+{{- /* {{< shot src="title.png" alt="Title screen" caption="..." scale="2" >}}
+Page-bundle image on a CRT-style frame. Nearest-neighbour thumbnail links to the original. */ -}}
+{{- $img := .Page.Resources.GetMatch (.Get "src") -}}
+{{- if not $img }}{{ errorf "shot: image %q not found in bundle %s" (.Get "src") .Page.File.Path }}{{ end -}}
+{{- /* scale is a minimum: small images are enlarged (whole-number, nearest-neighbour) to at least ~480px wide */ -}}
+{{- $scale := math.Max (float (default 1 (.Get "scale"))) (math.Ceil (div 480.0 (float $img.Width))) | int -}}
+{{- $w := mul $img.Width $scale -}}
+{{- if gt $w 800 }}{{ $w = 800 }}{{ end -}}
+{{- $thumb := $img.Resize (printf "%dx nearestneighbor webp q92" $w) -}}
+<figure class="shot">
+  <div class="crt"><a href="{{ $img.RelPermalink }}"><img class="pixel" loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" src="{{ $thumb.RelPermalink }}" alt="{{ .Get "alt" }}"></a></div>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

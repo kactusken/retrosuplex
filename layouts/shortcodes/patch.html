@@ -1,0 +1,15 @@
+{{- /* {{< patch name="Game" version="1.0" format="BPS" file="URL" platform="SNES" year="1994" publisher="Masaya" size="16 Mbit" >}}
+platform/year/publisher/size are optional and make the "tale of the tape" strip. */ -}}
+<div class="patchbox">
+  <strong>{{ .Get "name" }}</strong><span>v{{ .Get "version" }} / {{ .Get "format" }}</span>
+  <a class="btn" href="{{ .Get "file" }}">DOWNLOAD</a>
+  {{ if or (.Get "platform") (.Get "year") (.Get "publisher") (.Get "size") -}}
+  <dl class="tape">
+    {{ with .Get "platform" }}<div><dt>SYSTEM</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Get "year" }}<div><dt>RELEASED</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Get "publisher" }}<div><dt>PUBLISHER</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Get "size" }}<div><dt>PATCHED SIZE</dt><dd>{{ . }}</dd></div>{{ end }}
+  </dl>
+  {{- end }}
+  <small>Needs your own copy of the original game. No game data included.</small>
+</div>

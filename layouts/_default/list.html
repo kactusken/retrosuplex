@@ -1,0 +1,5 @@
+{{ define "main" }}
+<div class="list-head"><h1>{{ .Title }}</h1>{{ with .Content }}<div>{{ . }}</div>{{ end }}</div>
+<section class="lines">{{ partial "index-head.html" . }}{{ range $i, $p := .Paginator.Pages }}{{ partial "line.html" (dict "p" $p "n" (add $i 1)) }}{{ end }}</section>
+{{ template "_internal/pagination.html" . }}
+{{ end }}
