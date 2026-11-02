@@ -23,3 +23,6 @@ resources/_gen/
 
 # Design inspiration material (screenshots, references) - never commit or publish
 inspiration/
+
+# Claude Code local config
+.claude/
