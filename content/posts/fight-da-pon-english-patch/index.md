@@ -1,5 +1,5 @@
 ---
-title: "Fight da Pon gets an English patch"
+title: "Fight da Pon - Teaching Baba the ABCs"
 date: 2026-11-02
 sheet: 1
 draft: false
