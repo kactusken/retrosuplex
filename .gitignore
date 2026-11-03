@@ -26,3 +26,6 @@ inspiration/
 
 # Claude Code local config
 .claude/
+
+# Claude Code project instructions - keep local only
+CLAUDE.md
