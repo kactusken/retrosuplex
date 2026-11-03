@@ -35,3 +35,7 @@ pagerSize = 10
 
 [outputs]
   home = ["HTML", "RSS"]
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 2
