@@ -1,12 +1,12 @@
 ---
 title: "Wrestle Angels: Survivor 2 gets an English patch (beta)"
 date: 2026-11-02
+sheet: 5
 draft: true
 summary: "A public beta English patch for a 2008 PlayStation 2 joshi wrestling management game: 242 story scripts, about 60,000 lines of dialogue, and a rewritten text routine with proportional spacing."
 tags: ["ps2", "release", "beta", "management", "joshi", "xdelta"]
 game: "Wrestle Angels: Survivor 2"
 platform: "PS2"
-kind: "Patch"
 toc: true
 ---
 

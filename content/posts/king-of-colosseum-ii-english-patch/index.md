@@ -1,12 +1,12 @@
 ---
 title: "King of Colosseum II gets an English patch (public beta)"
 date: 2026-11-02
+sheet: 13
 draft: true
 summary: "A public beta English patch for the PS2 pro wrestling game King of Colosseum II: 16,997 text entries and 292 menu pictures, drawn in the game's own proportional font."
 tags: ["ps2", "release", "beta", "xdelta"]
 game: "King of Colosseum II"
 platform: "PS2"
-kind: "Patch"
 toc: true
 ---
 

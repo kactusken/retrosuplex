@@ -1,0 +1,16 @@
+{{- /* {{< asm title="$C0:1AC4 original" tag="original" >}}code{{< /asm >}}
+tag: original | patched | pseudo | math | calc. original and patched are 65816 listings: mnemonics, addresses, labels and
+comments are tinted at build time. pseudo, math and calc get comments tinted only. */ -}}
+{{- $tag := .Get "tag" | default "original" -}}
+{{- $names := dict "original" "ORIGINAL" "patched" "PATCHED" "pseudo" "PSEUDOCODE" "math" "FORMULA" "calc" "WORKED EXAMPLE" -}}
+{{- $s := .Inner | strings.TrimSpace | htmlEscape -}}
+{{- if in (slice "original" "patched") $tag -}}
+{{- $s = replaceRE `\b(LDA|STA|LDX|STX|LDY|STY|STZ|ASL|LSR|ROL|ROR|ADC|SBC|CMP|CPX|CPY|AND|ORA|EOR|INC|DEC|INX|INY|DEX|DEY|TAX|TAY|TXA|TYA|XBA|JMP|JML|JSL|JSR|RTL|RTS|BRA|BEQ|BNE|BCC|BCS|BPL|BMI|CLC|SEC|REP|SEP|PHA|PLA|PHX|PLX|PHY|PLY|PHD|PLD|PHB|PLB|NOP|MVN)\b` `<span class="m">${1}</span>` $s -}}
+{{- $s = replaceRE `(?m)^(\$[0-9A-F]{2}:[0-9A-F]{4})` `<span class="a">${1}</span>` $s -}}
+{{- $s = replaceRE `(?m)^([a-z_]+:)` `<span class="l">${1}</span>` $s -}}
+{{- end -}}
+{{- $s = replaceRE `(?m)(^|[ \t]);(.*)$` `${1}<span class="c">;${2}</span>` $s -}}
+<div class="code code-{{ $tag }}">
+  <div class="chead"><span class="ctitle">{{ .Get "title" }}</span><span class="ctag">{{ index $names $tag }}</span></div>
+  <pre tabindex="0"><code>{{ $s | safeHTML }}</code></pre>
+</div>

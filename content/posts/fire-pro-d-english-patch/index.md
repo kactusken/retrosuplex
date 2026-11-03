@@ -1,12 +1,12 @@
 ---
 title: "Fire Pro Wrestling D gets an English patch"
 date: 2026-11-02
+sheet: 12
 draft: true
 summary: "An English translation of Spike's 2001 Dreamcast wrestling game, with 220 wrestlers, 1,000 move names, Edit Mode, the network browser, and the downloadable content built in."
 tags: ["dreamcast", "release", "spike", "fire-pro", "xdelta"]
 game: "Fire Pro Wrestling D"
 platform: "Dreamcast"
-kind: "Patch"
 toc: true
 ---
 

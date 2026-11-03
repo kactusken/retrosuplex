@@ -1,12 +1,12 @@
 ---
 title: "Wrestle Angels Survivor gets an English patch (v0.1)"
 date: 2026-11-02
+sheet: 9
 draft: true
 summary: "A v0.1 English patch for the 2006 PS2 women's wrestling promotion-management game: 8,348 event messages, 206 wrestlers and 911 re-lettered pictures."
 tags: ["ps2", "release", "beta", "management-sim", "joshi"]
 game: "Wrestle Angels Survivor"
 platform: "PS2"
-kind: "Patch"
 toc: true
 ---
 

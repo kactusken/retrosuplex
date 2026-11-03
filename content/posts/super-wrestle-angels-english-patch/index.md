@@ -1,12 +1,12 @@
 ---
 title: "Super Wrestle Angels gets an English patch"
 date: 2026-11-02
+sheet: 6
 draft: true
 summary: "An early English release (v0.2) of a 1994 Super Famicom women's wrestling game: four modes, about 1,340 messages and 60 wrestlers, with a few known rough edges."
 tags: ["snes", "release", "imagineer", "women's wrestling", "beta"]
 game: "Super Wrestle Angels"
 platform: "SNES"
-kind: "Patch"
 toc: true
 ---
 

@@ -1,0 +1,5 @@
+{{- /* Wraps markdown tables in .tbl so posts can centre them in the text column. */ -}}
+<div class="tbl"><table>
+  <thead>{{ range .THead }}<tr>{{ range . }}<th{{ with .Alignment }} style="text-align:{{ . }}"{{ end }}>{{ .Text }}</th>{{ end }}</tr>{{ end }}</thead>
+  <tbody>{{ range .TBody }}<tr>{{ range . }}<td{{ with .Alignment }} style="text-align:{{ . }}"{{ end }}>{{ .Text }}</td>{{ end }}</tr>{{ end }}</tbody>
+</table></div>

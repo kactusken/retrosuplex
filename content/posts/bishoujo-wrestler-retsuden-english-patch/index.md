@@ -1,12 +1,12 @@
 ---
 title: "Bishoujo Wrestler Retsuden gets an English patch"
 date: 2026-11-02
+sheet: 7
 draft: true
 summary: "A first English release (v0.1) of a 1996 Super Famicom women's wrestling management game: 3,413 lines of story, new 8x16 font, and names packed into the old name font."
 tags: ["snes", "release", "kss", "management", "joshi"]
 game: "Bishoujo Wrestler Retsuden: Blizzard Yuki Rannyuu!!"
 platform: "SNES"
-kind: "Patch"
 toc: true
 ---
 

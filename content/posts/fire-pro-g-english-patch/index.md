@@ -1,12 +1,12 @@
 ---
 title: "Fire Pro Wrestling G gets an English patch (beta)"
 date: 2026-10-19
+sheet: 4
 draft: true
 summary: "A first public beta English patch for the 1999 PlayStation game: all 522 Fighting Road scenes, the menus, 194 wrestlers and 840 move names, with most story routes still unplayed."
 tags: ["psx", "release", "beta", "human-entertainment", "fire-pro"]
 game: "Fire Pro Wrestling G"
 platform: "PlayStation"
-kind: "Patch"
 toc: true
 ---
 

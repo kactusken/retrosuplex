@@ -1,12 +1,12 @@
 ---
 title: "Ouja no Tamashii: a PlayStation wrestling game in English"
 date: 2026-11-02
+sheet: 2
 draft: true
 summary: "An English translation of Zen Nippon Pro Wrestling: Ouja no Tamashii for the PlayStation, with menus and images redrawn and a patch that can also unlock the hidden modes."
 tags: ["playstation", "release", "all-japan", "xdelta", "translation"]
 game: "Zen Nippon Pro Wrestling: Ouja no Tamashii"
 platform: "PlayStation"
-kind: "Patch"
 toc: true
 ---
 

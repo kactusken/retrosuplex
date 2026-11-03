@@ -1,9 +1,10 @@
-{{- /* One row of the drawing index. Pass dict "p" page "n" position. */ -}}
+{{- /* One row of the drawing index. Pass dict "p" page "n" position. The number is the post's permanent `sheet` front matter; position is only a fallback. */ -}}
 {{- $p := .p -}}
+{{- $n := or $p.Params.sheet .n -}}
 <div class="line">
-  <span class="no"><b>図 {{ printf "%02d" .n }}</b><i>SHEET A-{{ printf "%02d" .n }}</i></span>
+  <span class="no"><b>図 {{ printf "%02d" $n }}</b><i>SHEET A-{{ printf "%02d" $n }}</i></span>
   <div>
-    <h3><span class="k">{{ upper (or $p.Params.kind (cond (eq $p.Section "patches") "Patch" "Post")) }}</span><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    <h3><span class="k">POST</span><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
     <p>{{ $p.Summary | plainify | truncate 160 }}</p>
   </div>
   <span class="rev">{{ $p.Date.Format "2006.01.02" }}</span>

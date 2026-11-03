@@ -1,12 +1,12 @@
 ---
 title: "Fire Pro Wrestling S - 6Men Scramble gets an English patch (v0.1 beta)"
 date: 2026-11-02
+sheet: 10
 draft: true
 summary: "A first public beta of an English patch for the 1996 Saturn wrestling game: 160 wrestlers, about 1,600 lines of story interviews, and 184 new two-letter characters to make the English fit."
 tags: ["saturn", "release", "beta", "human", "fire-pro", "xdelta"]
 game: "Fire Pro Wrestling S - 6Men Scramble"
 platform: "Sega Saturn"
-kind: "Patch"
 toc: true
 ---
 

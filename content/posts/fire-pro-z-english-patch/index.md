@@ -1,12 +1,12 @@
 ---
 title: "Fire Pro Wrestling Z gets an English patch (beta)"
 date: 2026-10-31
+sheet: 11
 draft: true
 summary: "A first public beta of an English translation of the 2003 PS2 game Fire Pro Wrestling Z: menus, seven story scenarios, 244 wrestlers and 1,448 moves."
 tags: ["ps2", "release", "beta", "fire-pro-wrestling"]
 game: "Fire Pro Wrestling Z"
 platform: "PS2"
-kind: "Patch"
 toc: true
 ---
 

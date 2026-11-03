@@ -10,7 +10,7 @@
 </section>
 <h2 class="sec">図面一覧 / TECHNICAL INDEX</h2>
 <section class="lines">{{ partial "index-head.html" . }}
-{{ range $i, $p := first 8 (where site.RegularPages "Section" "in" (slice "posts" "patches")) }}{{ partial "line.html" (dict "p" $p "n" (add $i 1)) }}{{ end }}
+{{ range $i, $p := first 8 (where site.RegularPages "Section" "posts") }}{{ partial "line.html" (dict "p" $p "n" (add $i 1)) }}{{ end }}
 </section>
 <p><a href="/posts/">All posts →</a></p>
 {{ end }}

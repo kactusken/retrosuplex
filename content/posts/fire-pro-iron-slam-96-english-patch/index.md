@@ -1,12 +1,12 @@
 ---
 title: "Fire Pro Wrestling Iron Slam '96 gets an English patch (beta)"
 date: 2026-11-02
+sheet: 3
 draft: true
 summary: "A first public beta (v0.1) of an English patch for the 1996 PlayStation wrestling game, with all 246 messages translated and an optional unlock for the two hidden bosses."
 tags: ["ps1", "playstation", "release", "beta", "fire-pro-wrestling", "xdelta"]
 game: "Fire Pro Wrestling Iron Slam '96"
 platform: "PlayStation"
-kind: "Patch"
 toc: true
 ---
 

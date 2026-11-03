@@ -1,0 +1,7 @@
+{{- /* {{< demo name="width" caption="..." >}} Interactive figure. Needs demo.js in the page bundle (plain JS, no dependencies); layouts/_default/single.html loads it.
+Without JS the figure shows a static capture, demo-NAME.png in the bundle, if there is one. */ -}}
+{{- $name := .Get "name" -}}
+<figure class="demo" data-demo="{{ $name }}">
+  <div class="dbody">{{ with $.Page.Resources.GetMatch (printf "demo-%s.png" $name) }}<noscript><img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Static capture of the interactive figure" loading="lazy"><p class="dim">Static capture. The live version needs JavaScript.</p></noscript>{{ else }}<noscript><p class="dim">This figure needs JavaScript.</p></noscript>{{ end }}</div>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

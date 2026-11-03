@@ -1,12 +1,12 @@
 ---
 title: "Jikkyou Power Pro Wrestling '96 - Max Voltage gets an English patch"
 date: 2026-11-02
+sheet: 8
 draft: true
 summary: "A full English patch for Konami's 1996 Super Famicom wrestling game: 50 wrestlers, 185 move names, interviews and the whole Max Voltage career mode."
 tags: ["snes", "release", "konami", "career-mode"]
 game: "Jikkyou Power Pro Wrestling '96 - Max Voltage"
 platform: "SNES"
-kind: "Patch"
 toc: true
 ---
 
