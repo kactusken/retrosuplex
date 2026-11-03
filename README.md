@@ -19,12 +19,13 @@ hugo new posts/my-slug/index.md   # new post from archetypes/default.md
 
 - `content/posts/<slug>/index.md` – one page bundle per post; images live beside it
 - `content/patches/<slug>/index.md` – one page per released patch
-- `layouts/` – templates; `layouts/shortcodes/` – `shot`, `compare`, `patch`, `hex`, `demo`
+- `layouts/` – templates; `layouts/shortcodes/` – `shot`, `compare`, `patch`, `hex`, `demo`, `asm` (formula/worked-example boxes), `sec` (section with floating side images), `wide` (full-width block)
 - `assets/css/main.css` – the only stylesheet
 - `static/` – files served as-is (CNAME, robots.txt)
 
 ## Notes
 
-- Posts start as `draft: true`.
+- Posts start as `draft: true`. Each has a permanent `sheet` number (next unused integer, never reused).
+- Interactive `demo` figures need a static `demo-NAME.png` beside `demo.js` for the no-JS fallback.
 - Screenshots go through the `shot` / `compare` shortcodes so pixel art stays crisp.
 - No ROMs, ISOs or original game data are ever committed. Patches are IPS/BPS/xdelta only.
