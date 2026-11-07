@@ -1,0 +1,8 @@
+{{- /* {{< clip src="move.webp" alt="..." caption="..." >}}
+Animated page-bundle image (animated WebP/GIF) on the same CRT frame as shot. Served as-is: resizing would drop the animation. */ -}}
+{{- $img := .Page.Resources.GetMatch (.Get "src") -}}
+{{- if not $img }}{{ errorf "clip: image %q not found in bundle %s" (.Get "src") .Page.File.Path }}{{ end -}}
+<figure class="shot">
+  <div class="crt"><img class="pixel" loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}" src="{{ $img.RelPermalink }}" alt="{{ .Get "alt" }}"></div>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

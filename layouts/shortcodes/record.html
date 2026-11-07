@@ -1,0 +1,21 @@
+{{- /* {{< record >}} Visual of a DAnn.DAT action record: file map plus the 13 bytes of one real record (Benoit, record 13). */ -}}
+<figure class="recviz">
+  <div class="rv-file" role="img" aria-label="File map of DAnn.DAT: action records, animation headers, animation offsets">
+    <div class="rv-seg rv-a"><b>0x000</b><span>42 action records</span><i>42 x 13 = 546 bytes</i></div>
+    <div class="rv-seg rv-b"><b>0x224</b><span>102 animation headers</span><i>102 x 32 = 3,264 bytes</i></div>
+    <div class="rv-seg rv-c"><b>0xEE4</b><span>102 offsets</span><i>4 bytes each</i></div>
+  </div>
+  <div class="rv-zoom">One record, zoomed in: Benoit's record 13, his special move</div>
+  <div class="rv-rec">
+    <div class="rv-g g-pow"  style="--n:1"><div class="rv-cell"><s>0</s><u>1E</u></div><p><b>Power</b>30</p></div>
+    <div class="rv-g g-unk"  style="--n:2"><div class="rv-cell"><s>1</s><u>00</u></div><div class="rv-cell"><s>2</s><u>00</u></div><p><b>Not decoded</b>0 in most records</p></div>
+    <div class="rv-g g-act"  style="--n:2"><div class="rv-cell"><s>3</s><u>00</u></div><div class="rv-cell"><s>4</s><u>00</u></div><p><b>Active frames</b>when it can hit</p></div>
+    <div class="rv-g g-sp"   style="--n:2"><div class="rv-cell"><s>5</s><u>00</u></div><div class="rv-cell"><s>6</s><u>F9</u></div><p><b>Spirit change</b>you +0, him &minus;7</p></div>
+    <div class="rv-g g-stat" style="--n:2"><div class="rv-cell"><s>7</s><u>03</u></div><div class="rv-cell"><s>8</s><u>02</u></div><p><b>Stats used</b>your offence 3 vs his defence 2</p></div>
+    <div class="rv-g g-wear" style="--n:1"><div class="rv-cell"><s>9</s><u>05</u></div><p><b>Wear</b>5 off his body part</p></div>
+    <div class="rv-g g-unk"  style="--n:1"><div class="rv-cell"><s>10</s><u>00</u></div><p><b>Posture</b>ground holds only</p></div>
+    <div class="rv-g g-type" style="--n:1"><div class="rv-cell"><s>11</s><u>02</u></div><p><b>Move type</b>2 = throw</p></div>
+    <div class="rv-g g-unk"  style="--n:1"><div class="rv-cell"><s>12</s><u>FF</u></div><p><b>Not decoded</b>FF in most records</p></div>
+  </div>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
