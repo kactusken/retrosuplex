@@ -1,0 +1,27 @@
+{{- /* {{< bytes ruler="17" caption="..." >}}
+Label | note | 8272:Ｓ 8295:ｕ 41:A 20:␣ 00:end | strip.png
+...
+{{< /bytes >}}
+Byte-aligned rows of a field: one line per row, "label | note | cells", optionally "| image". A cell is HEX:glyph;
+a 4-digit HEX (a two-byte character) spans two byte columns, "00" is drawn as the end byte. ruler = number of
+byte columns, numbered 0.. on top, so rows of different encodings line up byte for byte. The optional image (a
+page-bundle screenshot crop of where the field is shown on screen) is drawn above its row, stretched with
+nearest-neighbour over every column but the last, so the screen lines up with the bytes. No JS. */ -}}
+{{- $cols := int (default "16" (.Get "ruler")) -}}
+{{- $page := .Page -}}
+<figure class="bytes" style="--cols:{{ $cols }}">
+  <div class="by-row by-ruler"><div class="by-lab"></div><div class="by-grid">{{ range seq 0 (sub $cols 1) }}<span>{{ . }}</span>{{ end }}</div></div>
+  {{- range split (trim .Inner "\n ") "\n" }}{{ $p := split (trim . " ") " | " }}
+  <div class="by-set">
+  {{- if ge (len $p) 4 }}{{ with $page.Resources.GetMatch (trim (index $p 3) " ") }}
+  <div class="by-row by-shot"><div class="by-lab"><i>on screen</i></div><div class="by-grid"><img class="pixel" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" style="grid-column:1 / span {{ sub $cols 1 }}"></div></div>
+  {{- else }}{{ errorf "bytes: image %q not found in %s" (index $p 3) $page.File.Path }}{{ end }}{{ end }}
+  <div class="by-row"><div class="by-lab"><b>{{ index $p 0 }}</b><i>{{ index $p 1 }}</i></div><div class="by-grid">
+    {{- range split (index $p 2) " " }}{{ $t := split . ":" }}{{ $h := index $t 0 }}{{ $n := div (len $h) 2 }}
+    <div class="by-c{{ if eq $n 2 }} by-w{{ end }}{{ if eq $h "00" }} by-end{{ end }}" style="grid-column:span {{ $n }}"><u>{{ if eq $n 2 }}{{ substr $h 0 2 }}&#8239;{{ substr $h 2 2 }}{{ else }}{{ $h }}{{ end }}</u><s>{{ index $t 1 }}</s></div>
+    {{- end }}
+  </div></div>
+  </div>
+  {{- end }}
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
