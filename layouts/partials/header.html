@@ -1,6 +1,8 @@
-{{- $jp := dict "posts" "記事" "patches" "パッチ" "about" "概要" -}}
+{{- /* The home page has no title block: its cover banner carries the navigation instead. */ -}}
+{{- if not .IsHome -}}
 <div class="wrap"><header>
   <a class="logo" href="/"><b>闘魂</b><span>RETRO SUPLEX</span></a>
-  <div class="hmeta">PROJECT: RETRO SUPLEX<br>設計図 / FAN TRANSLATION WORKS</div>
-  <nav>{{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name | upper }}<i>{{ index $jp (lower .Name) }}</i></a>{{ end }}<a href="/index.xml">RSS<i>配信</i></a></nav>
+  <div class="hmeta">PROJECT: RETRO SUPLEX<br>プロレスをみんなに / PURORESU FOR ALL</div>
+  <nav>{{ partial "navlinks.html" . }}</nav>
 </header></div>
+{{- end -}}

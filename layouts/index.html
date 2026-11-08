@@ -2,10 +2,11 @@
 <section class="cover">
   <div class="art" aria-hidden="true"><div class="kana">プロレス</div></div>
   <div class="t">
-    <div class="iss">試合開始 / {{ now.Format "JAN 2006" | upper }}</div>
-    <h1>Translating the ring.</h1>
+    <div class="iss">試合開始 / {{ now.Format "Jan 2006" | upper }}</div>
+    <h1>Retro Suplex</h1>
     <p>{{ site.Params.description }}</p>
   </div>
+  <nav class="covernav"><span class="proj">TRANSLATING THE RING.<i>プロレスをみんなに / PURORESU FOR ALL</i></span>{{ partial "navlinks.html" . }}</nav>
   {{ with resources.Get "img/header-ring.png" }}{{ $r := .Resize "700x webp q88" }}<img class="ring" src="{{ $r.RelPermalink }}" width="{{ $r.Width }}" height="{{ $r.Height }}" alt="Diagram of a wrestling ring with labels for the corner posts, canvas, ropes, turnbuckles and apron">{{ end }}
 </section>
 <h2 class="sec">図面一覧 / TECHNICAL INDEX</h2>

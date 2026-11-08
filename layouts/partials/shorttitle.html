@@ -1,0 +1,3 @@
+{{- /* Post title without its "Game - " prefix (only when the page has a game). */ -}}
+{{- $parts := split .Title " - " -}}
+{{- if and .Params.game (gt (len $parts) 1) }}{{ return (delimit (after 1 $parts) " - ") }}{{ else }}{{ return .Title }}{{ end -}}

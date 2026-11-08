@@ -8,6 +8,6 @@ Page-bundle image on a CRT-style frame. Nearest-neighbour thumbnail links to the
 {{- if gt $w 800 }}{{ $w = 800 }}{{ end -}}
 {{- $thumb := $img.Resize (printf "%dx nearestneighbor webp q92" $w) -}}
 <figure class="shot">
-  <div class="crt"><a href="{{ $img.RelPermalink }}"><img class="pixel" loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" src="{{ $thumb.RelPermalink }}" alt="{{ .Get "alt" }}"></a></div>
-  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  <div class="crt"><a href="{{ $img.RelPermalink }}" title="Click to enlarge"><img class="pixel" loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" src="{{ $thumb.RelPermalink }}" alt="{{ .Get "alt" }}"></a></div>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}<span class="fdata">{{ $img.Width }}×{{ $img.Height }}{{ if gt $scale 1 }} · {{ $scale }}×{{ end }}{{ with $.Page.Params.platform }} · {{ . }}{{ end }}</span></figcaption>{{ end }}
 </figure>

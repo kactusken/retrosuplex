@@ -3,12 +3,14 @@
 <meta name="color-scheme" content="dark">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="{{ .Permalink }}">
 {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">{{ end }}
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{ with .Resources.GetMatch "cover*" }}<meta property="og:image" content="{{ (.Fit "1200x630").Permalink }}">{{ end }}
+{{ with .Resources.GetMatch "cover*" }}<meta property="og:image" content="{{ (.Fit "1200x630").Permalink }}">{{ else }}<meta property="og:image" content="{{ "og.png" | absURL }}">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">

@@ -1,4 +1,8 @@
 <div class="wrap"><footer>
-  <p>© {{ now.Year }} Retro Suplex. Fan translation patches contain no game data and must be applied to a ROM/image you own.</p>
+  <div class="fl"><b>RETRO SUPLEX</b><span>プロレスをみんなに / PURORESU FOR ALL</span></div>
+  <nav class="fn">{{ partial "navlinks.html" . }}</nav>
+  <p>© {{ now.Year }} Retro Suplex. Patches contain no game data; apply them to a ROM/image you own.</p>
   <div class="fs">SCALE 1:1</div>
 </footer></div>
+{{ $js := resources.Get "js/site.js" | minify | fingerprint }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

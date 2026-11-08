@@ -1,11 +1,21 @@
 {{ define "main" }}
 <article class="post">
-  <h1>{{ .Title }}</h1>
-  {{ if in (slice "posts" "patches") .Section }}<div class="meta">{{ with .Params.platform }}{{ . }} / {{ end }}{{ .Date.Format "2006.01.02" }} / {{ .ReadingTime }} MIN</div>{{ end }}
+  {{- $parts := split .Title " - " -}}
+  {{- $t := .Title -}}
+  {{- $game := and (eq .Section "posts") .Params.game -}}
+  {{- if and $game (gt (len $parts) 1) }}{{ $t = delimit (after 1 $parts) " - " }}{{ end -}}
+  {{ if $game }}<div class="game">{{ .Params.game }}{{ with .Params.platform }} ({{ . }}){{ end }}</div>{{ end }}
+  <h1>{{ $t }}</h1>
+  {{ if in (slice "posts" "patches") .Section }}<div class="meta">{{ if not (and (eq .Section "posts") .Params.game) }}{{ with .Params.platform }}{{ . }} / {{ end }}{{ end }}{{ .Date.Format "2006.01.02" }} / {{ .ReadingTime }} MIN</div>{{ end }}
   {{ with .Params.summary }}{{ if in (slice "posts") $.Section }}<p class="lede">{{ . }}</p>{{ end }}{{ end }}
+  {{ with .Params.tldr }}<aside class="tldr"><b>THE SHORT VERSION</b><ul>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul></aside>{{ end }}
   {{ if and .Params.toc (gt .WordCount 600) }}<details class="toc"><summary>Contents</summary>{{ .TableOfContents }}</details>{{ end }}
   {{ .Content }}
   {{ with .Resources.Get "demo.js" }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
   {{ with .Params.tags }}<p>{{ range . }}<span class="tag">#{{ . }}</span>{{ end }}</p>{{ end }}
+{{ if eq .Section "posts" }}<nav class="pn">
+  {{ with .PrevInSection }}<a class="prev" href="{{ .RelPermalink }}"><i>← OLDER / 前</i><span>{{ with .Params.game }}{{ . }}{{ end }}</span><b>{{ partial "shorttitle.html" . }}</b></a>{{ else }}<span></span>{{ end }}
+  {{ with .NextInSection }}<a class="next" href="{{ .RelPermalink }}"><i>NEWER / 次 →</i><span>{{ with .Params.game }}{{ . }}{{ end }}</span><b>{{ partial "shorttitle.html" . }}</b></a>{{ end }}
+</nav>{{ end }}
 </article>
 {{ end }}

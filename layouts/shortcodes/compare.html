@@ -4,7 +4,7 @@
 <figure class="compare">
   {{ range slice (dict "i" $b "l" "ORIGINAL") (dict "i" $a "l" "PATCHED") }}
   {{ $t := .i.Resize (printf "%dx nearestneighbor webp q92" (cond (gt (mul .i.Width 2) 420) 420 (mul .i.Width 2))) }}
-  <div><div class="crt"><a href="{{ .i.RelPermalink }}"><img class="pixel" loading="lazy" src="{{ $t.RelPermalink }}" alt="{{ .l }}"></a></div><span>{{ .l }}</span></div>
+  <div><div class="crt"><a href="{{ .i.RelPermalink }}" title="Click to enlarge"><img class="pixel" loading="lazy" src="{{ $t.RelPermalink }}" alt="{{ .l }}"></a></div><span>{{ .l }}</span></div>
   {{ end }}
   {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
 </figure>

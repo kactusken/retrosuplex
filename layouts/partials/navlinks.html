@@ -1,0 +1,2 @@
+{{- $jp := dict "posts" "記事" "patches" "パッチ" "about" "概要" -}}
+{{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name | upper }}<i>{{ index $jp (lower .Name) }}</i></a>{{ end }}<a href="/index.xml">RSS<i>配信</i></a>

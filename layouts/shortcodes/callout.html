@@ -1,0 +1,4 @@
+{{- /* {{% callout title="Why it works" %}}Markdown body{{% /callout %}} - a set-apart note for the key idea of a section. */ -}}
+<aside class="callout"><b>{{ .Get "title" | default "NOTE" }}</b>
+{{ .Inner }}
+</aside>
