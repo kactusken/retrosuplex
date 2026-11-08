@@ -1,0 +1,12 @@
+{{- /* {{< memmap caption="..." >}}
+0x8C1BBA8C | DL pointer table | 100 x u32 | tbl
+...
+{{< /memmap >}}
+Rows of a memory map, one per region, top = lower address: "address | name | size or note | class". Class (optional): tbl, sav, edit, pool, net.
+Rows with class "edit" and "pool" are bracketed as the span the disc image overwrites. No JS. */ -}}
+<figure class="memmap">
+  {{- range split (trim .Inner "\n ") "\n" }}{{ $p := split (trim . " ") " | " }}
+  <div class="mm-row mm-{{ trim (index $p 3) " " | default "x" }}"><code>{{ index $p 0 }}</code><b>{{ index $p 1 }}</b><i>{{ index $p 2 }}</i></div>
+  {{- end }}
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

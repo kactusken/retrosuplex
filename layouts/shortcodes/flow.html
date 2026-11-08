@@ -1,0 +1,13 @@
+{{- /* {{< flow caption="..." >}}
+Title | one line of detail | class
+...
+{{< /flow >}}
+A numbered chain of steps drawn as boxes joined by arrows. Class (optional): new (a step the patch added, magenta). No JS. */ -}}
+<figure class="flow">
+  <ol>
+  {{- range split (trim .Inner "\n ") "\n" }}{{ $p := split (trim . " ") " | " }}
+    <li class="{{ if gt (len $p) 2 }}fl-{{ trim (index $p 2) " " }}{{ end }}"><b>{{ index $p 0 }}</b><span>{{ index $p 1 | markdownify }}</span></li>
+  {{- end }}
+  </ol>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

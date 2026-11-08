@@ -253,3 +253,26 @@ table.ptable{display:table;width:100%;overflow:visible;border-collapse:collapse;
 .bytes .by-shot{margin-bottom:4px}
 .bytes .by-shot img{display:block;width:100%;height:auto;image-rendering:pixelated;border:1px solid var(--line)}
 .bytes .by-shot .by-lab i{color:var(--yel)}
+/* memmap: regions of a memory map (layouts/shortcodes/memmap.html) */
+.memmap{margin:1.6rem 0}
+.memmap .mm-row{display:grid;grid-template-columns:130px 1fr auto;gap:14px;align-items:baseline;border:1px solid var(--line);border-left:4px solid var(--dim);background:var(--deep);padding:7px 12px;margin-bottom:3px}
+.memmap .mm-row code{font:500 13px var(--mono);color:var(--yel);background:none;padding:0}
+.memmap .mm-row b{font:600 15px var(--body);color:var(--fg)}
+.memmap .mm-row i{font:400 12px var(--mono);color:var(--dim);font-style:normal}
+.memmap .mm-tbl{border-left-color:var(--cyan)}
+.memmap .mm-sav{border-left-color:#6c6290}
+.memmap .mm-edit,.memmap .mm-pool{border-left-color:var(--mag);background:rgba(255,47,135,.1)}
+.memmap .mm-edit+.mm-edit,.memmap .mm-edit+.mm-pool{margin-top:-4px}
+.memmap .mm-pool{padding:16px 12px}
+.memmap .mm-net{border-left-color:#6c6290}
+/* flow: a chain of boxes (layouts/shortcodes/flow.html) */
+.flow{margin:1.6rem 0}
+.flow ol{list-style:none;margin:0;padding:0;display:flex;gap:26px;counter-reset:fl}
+.flow li{flex:1 1 0;min-width:0;position:relative;border:1px solid var(--cyan);background:var(--deep);padding:10px 12px;counter-increment:fl}
+.flow li::before{content:counter(fl);display:block;font:500 11px var(--mono);color:var(--dim);margin-bottom:2px}
+.flow li+li::after{content:"\25B6";position:absolute;left:-21px;top:50%;transform:translateY(-50%);color:var(--dim);font-size:14px}
+.flow li b{display:block;font:600 14px/1.3 var(--body);color:var(--fg)}
+.flow li span{display:block;font:400 13px/1.4 var(--body);color:var(--dim);margin-top:4px}
+.flow li span code{font-size:12px}
+.flow .fl-new{border-color:var(--mag);background:rgba(255,47,135,.1)}
+.flow .fl-new::before{color:var(--mag)}
