@@ -2,7 +2,7 @@
 title: "Toukon Retsuden 4 - Sixteen Letters in an Eight-Letter Box"
 date: 2026-11-08
 draft: false
-sheet: 15
+sheet: 3
 summary: "Toukon Retsuden 4's name entry types English as full-width Japanese characters, so an Edit wrestler got 8 wide letters while every real wrestler's name was narrow. I kept the keyboard as it is and changed what gets saved: plain ASCII, 16 letters, the same width as the rest of the game."
 tags: ["dreamcast", "yukes", "tomy", "name-entry", "sh4", "full-width", "character-spacing"]
 game: "Shin Nihon Pro Wrestling - Toukon Retsuden 4"

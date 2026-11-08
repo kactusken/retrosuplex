@@ -2,7 +2,7 @@
 title: "Fire Pro D - Hey, Where Did Spike's Modem Go?"
 date: 2026-11-08
 draft: false
-sheet: 16
+sheet: 4
 summary: "Spike let Fire Pro Wrestling D players download 100 moves and 50 wrestlers to a memory card, and the servers are long gone. This is how the (All Unlocked) patches put all of it into the disc: how the game loads a download, the 600 KB block that replaces the card, a 60-byte boot hook, and the save guard that keeps your own wrestlers safe."
 tags: ["dreamcast", "fire-pro", "sh4", "spike", "patch"]
 game: "Fire Pro Wrestling D"

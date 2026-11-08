@@ -2,7 +2,7 @@
 title: "Virtual Pro Wrestling - How Many Backdrop Variants Can There Be???"
 date: 2026-11-06
 draft: false
-sheet: 14
+sheet: 2
 summary: "I wanted a full profile for every wrestler in a 1996 PS1 game, which meant knowing every move. So I taught the emulator's debugger to perform and film all of them, and I dug into how spirit and counters decide a match."
 tags: ["ps1", "asmik", "aki", "patch", "capture", "debugger", "roster-guide", "spirit"]
 game: "Virtual Pro Wrestling"
